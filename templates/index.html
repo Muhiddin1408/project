@@ -1,0 +1,487 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+
+
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Author: HiBootstrap Theme, Category: IT, Multipurpose, HTML, SASS" />
+
+    <!-- title -->
+    <title>Solit - IT Startup HTML Template</title>
+
+    <!-- bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" />
+    <!-- fontawesome CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.min.css' %}" />
+    <!-- envy icon CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/envyicon.min.css' %}" />
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}" />
+    <!-- magnific popup CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.min.css' %}" />
+    <!-- owl-carousel CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}" />
+    <!-- meanmenu CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/meanmenu.min.css' %}" />
+    <!-- main style CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+    <!-- responsive CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}" />
+
+    <!-- favicon -->
+        
+    {% endblock head %}
+
+
+    
+    {% block content %}
+    
+        
+        
+        <!-- start home banner area -->
+        <div id="home" class="home-banner-area banner-type-two">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="banner-content">
+                            <h1>{{banner.title}}</h1>
+                            <p>
+                                {{banner.text}}
+                            </p>
+                            <div class="cta-btn">
+                                <a href="" class="btn btn-solid">Try for free</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="banner-image">
+                            <img src="{% static 'assets/img/banner/banner_2.png' %}" alt="banner" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end sero section-->
+
+        <!-- start top feature section -->
+        <section class="top-feature-section ptb-100 bg-white">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="section-title">
+                            <span class="subtitle">top features</span>
+                            <h2>{{feauters.title}}</h2>
+                        </div>
+                        <div class="feature-text-blc">
+                            <p>
+                                {{feauters.text}}
+                            </p>
+                        </div>
+                        <div class="cta-btn">
+                            <a href="#" class="btn btn-solid">Read more <i class="envy envy-right-arrow"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="single-feature">
+                                    <div class="single-feature-content">
+                                        <i class="envy envy-cloud-computing1"></i>
+                                        <h3 class="mt-3">{{feauters.feature1}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="single-feature">
+                                    <div class="single-feature-content">
+                                        <i class="envy envy-code2"></i>
+                                        <h3 class="mt-3">{{feauters.feature2}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="single-feature">
+                                    <div class="single-feature-content">
+                                        <i class="envy envy-global"></i>
+                                        <h3 class="mt-3">{{feauters.feature3}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="single-feature">
+                                    <div class="single-feature-content">
+                                        <i class="envy envy-server"></i>
+                                        <h3 class="mt-3">{{feauters.feature4}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="shape">
+                <img src="{% static 'assets/img/resource/circle_shape.png' %}" alt="circle" />
+                <span class="dot-1"></span>
+                <span class="dot-2"></span>
+                <span class="dot-3"></span>
+                <span class="dot-4"></span>
+                <span class="dot-5"></span>
+            </div>
+        </section>
+        <!-- end feature section -->
+
+        <!-- Start Partner Area -->
+        <div class="partner-area ptb-50">
+            <div class="container">
+                <div class="partner-slider owl-carousel">
+                    {% for image in testimionals %}
+                    <div class="partner-item">
+                        <img src="{{ image.image.url }}" alt="image" />
+                        <img src="{{ image.image.url }}" alt="partner" />
+                    </div>
+                    {% endfor %}                   
+                </div>
+            </div>
+        </div>
+        <!-- End Partner Area -->
+
+        <!--start about section-->
+        <section id="about" class="about-section about-two pt-100 pb-70 bg-white">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-sm-12 pb-30">
+                        <div class="about-img">
+                            <div class="grid-img">
+                                <div class="grid-img-inner">
+                                    <img src="{{ about.image1.url }}" class="image-responsive" alt="office_image" />
+                                </div>
+                                <div class="grid-img-inner">
+                                    <img src="{{ about.image2.url }}" class="image-responsive" alt="office_image" />
+                                </div>
+                                <div class="grid-img-inner">
+                                    <img src="{{ about.image3.url }}" class="image-responsive" alt="office_image" />
+                                </div>
+                                <div class="grid-img-inner">
+                                    <img src="{{ about.image4.url }}" class="image-responsive" alt="office_image" />
+                                </div>
+                            </div>
+                            <!-- <div class="logo-overlay">
+                                <img src="{{ site_logo.image.url }}" alt="logo_without_slogan" />
+                            </div> -->
+                            <div class="shape">
+                                <img src="{% static 'assets/img/resource/shape_2.png' %}" alt="shape" class="shape-inner" />
+                                <img src="{% static 'assets/img/resource/shape_4.png' %}" alt="shape" class="shape-inner" />
+                                <img src="{% static 'assets/img/resource/shape_2.png' %}" alt="shape" class="shape-inner" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12 pb-30">
+                        <div class="section-title">
+                            <span class="subtitle">about us</span>
+                            <h2>{{ about.title }}</h2>
+                        </div>
+                        <div class="about-text-blc">
+                            <p>{{ about.text }}</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="about-feature-blc">
+                                    <i class="envy envy-quality blue"></i>
+                                    <div class="about-feature-content">
+                                        <h6>{{ about.topic_title1 }}</h6>
+                                        <p>{{ about.topic_text1 }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="about-feature-blc">
+                                    <i class="envy envy-quality red"></i>
+                                    <div class="about-feature-content">
+                                        <h6>{{ about.topic_title2 }}</h6>
+                                        <p>{{ about.topic_text2 }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cta-btn">
+                            <a href="{% url 'about' %}" class="btn btn-solid">
+                                Read more
+                                <i class="envy envy-right-arrow"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--end about section-->
+
+        <!-- start video section -->
+        <section class="video-section ptb-100 bg-white">
+            <div class="container">
+                <div class="section-title title-light">
+                    <span class="subtitle">Intro video</span>
+                    <h2>{{intro_video.title}}</h2>
+                    <p>{{intro_video.text}}</p>
+                </div>
+                <div class="video-content">
+                    <div class="video-box">
+                        <figure class="video-image">
+                            <img src="{{intro_video.background_image.url}}" alt="video" />
+                        </figure>
+                        <a href="{{intro_video.video_url}}" class="youtube-popup video-btn">
+                            <i class="fas fa-play"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- video-content -->
+            </div>
+        </section>
+        <!-- end video section -->
+
+        <!--  start service section -->
+        <section class="service-section bg-white">
+            <div class="container">
+                <div class="section-title">
+                    <span class="subtitle">our services</span>
+                    <h2>{{ services_text.title }}</h2>
+                    <p>{{ services_text.text }}</p>
+                </div>
+                <div class="row pt-70">
+                    
+                    {% for service in services %}
+                        <div class="col-lg-4 col-md-6 col-sm-12 pb-70">
+                            <div class="item-single">
+                                <div class="icon">
+                                    <i class="envy envy-magnify-glass2"></i>
+                                    <div class="icon-bg">
+                                        <img src="{{ service.image.url }}" alt="icon_shape" />
+                                    </div>
+                                </div>
+                                <div class="item-content">
+                                    <h6><a href="#">{{ service.title }}</a></h6>
+                                    <p>{{ service.text }}</p>
+                                    <!-- <a href="#" target="_self" class="btn btn-text-only">read more <i class="envy envy-right-arrow"></i></a> -->
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                    
+                </div>
+            </div>
+        </section>
+        <!-- end service section -->
+
+        <!-- start testimonial section  -->
+        <section id="testimonial" class="testimonial-section testimonial ptb-100 bg-faded">
+            <div class="container">
+                <div class="section-title">
+                    <span class="subtitle">testimonials</span>
+                    <h2>{{ testimionals_text.title }}</h2>
+                    <p>{{ testimionals_text.text }}</p>
+                </div>
+                <div class="tesimonial-grid">
+                    <div class="dot active">
+                        <img src="{{ testimionals_text.image1.url }}" alt="client-1" />
+                    </div>
+                    <div class="dot">
+                        <img src="{{ testimionals_text.image2.url }}" alt="client-2" />
+                    </div>
+                    <div class="dot">
+                        <img src="{{ testimionals_text.image3.url }}" alt="client-3" />
+                    </div>
+                    <div class="dot">
+                        <img src="{{ testimionals_text.image4.url }}" alt="client-4" />
+                    </div>
+                    <div class="dot">
+                        <img src="{{ testimionals_text.image5.url }}" alt="client-5" />
+                    </div>
+                    <div class="dot">
+                        <img src="{{ testimionals_text.image6.url }}" alt="client-6" />
+                    </div>
+                    <div class="testimonial-slider owl-carousel">
+                        
+                        {% for feedback in feedbacks %}
+                            <div class="slider-item">
+                                <div class="qoute-icon">
+                                    <img src="{% static 'assets/img/resource/quotation.png' %}" alt="quotation" />
+                                </div>
+                                <div class="inner-text">
+                                    <p>
+                                        {{ feedback.feedback }}
+                                    </p>
+                                </div>
+                                <div class="client">
+                                    <div class="client-img">
+                                        <img src="{{ feedback.image.url }}" alt="client-1" />
+                                    </div>
+                                    <div class="client-info">
+                                        <h6>{{ feedback.name }}</h6>
+                                        <span>{{ feedback.position }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="overlay-img">
+                        <img src="{% static 'assets/img/background/Testimonial_bg.png' %}" alt="Testimonial_bg" />
+                    </div>
+                </div>
+                <!-- tesimonial-grid -->
+            </div>
+            <div class="shape">
+                <img src="{% static 'assets/img/resource/shape_6.png' %}" alt="shape" class="shape-inner" />
+                <img src="{% static 'assets/img/resource/Ellipse_1.png' %}" alt="shape" class="shape-inner" />
+                <img src="{% static 'assets/img/resource/Rectangle_1.png' %}" alt="shape" class="shape-inner" />
+                <img src="{% static 'assets/img/resource/Ellipse_1.png' %}" alt="shape" class="shape-inner" />
+                <img src="{% static 'assets/img/resource/Rectangle_1.png' %}" alt="shape" class="shape-inner" />
+                <img src="{% static 'assets/img/resource/shape_2.png' %}" alt="shape" class="shape-inner" />
+            </div>
+        </section>
+        <!-- testimonial section end  -->
+
+        <!-- pricing plan start -->
+        <section id="pricing" class="pricing-section ptb-100">
+            <div class="container">
+                <div class="section-title title-light pb-100">
+                    <span class="subtitle">pricing packages</span>
+                    <h2>{{ paccages_text.title }}</h2>
+                    <p>{{ paccages_text.text }}</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="pricing-item-single">
+                            <div class="pricing-item-content">
+                                <div class="content-text">
+                                    <span class="label">{{ left_package.name }}</span>
+                                    <h2 class="price"><span>$</span>{{ left_package.price }}</h2>
+                                    <p>{{ left_package.timeframe }}</p>
+                                </div>
+                                <div class="content-bg"><img src="{% static 'assets/img/resource/icon_shape_7.png' %}" alt="" /></div>
+                            </div>
+                            <div class="pricing-item-list">
+                                <ul>
+                                    <li><i class="envy envy-paper-plane"></i>{{ left_package.offer1 }}</li>
+                                    <li><i class="envy envy-paper-plane"></i>{{ left_package.offer2 }}</li>
+                                    <li><i class="envy envy-paper-plane"></i>{{ left_package.offer3 }}</li>
+                                    <li><i class="envy envy-paper-plane"></i>{{ left_package.offer4 }}</li>
+                                    <li><i class="envy envy-paper-plane"></i>{{ left_package.offer5 }}</li>
+                                </ul>
+                                <a href="" class="btn btn-solid">choose plan <i class="envy envy-right-arrow"></i></a>
+                            </div>
+                        </div>
+                        <!-- pricing-item-single -->
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="pricing-item-single">
+                            <div class="pricing-item-content">
+                                <div class="content-text">
+                                    <span class="label">{{ center_package.name }}</span>
+                                    <h2 class="price"><span>$</span>{{ center_package.price }}</h2>
+                                    <p>{{center_package.timeframe}}</p>
+                                </div>
+                                <div class="content-bg"><img src="{% static 'assets/img/resource/icon_shape_8.png' %}" alt="" /></div>
+                            </div>
+                            <div class="pricing-item-list">
+                                <ul>
+                                    <li><i class="envy envy-paper-plane"></i>{{ center_package.offer1 }}</li>
+                                    <li><i class="envy envy-paper-plane"></i>{{ center_package.offer2 }}</li>
+                                    <li><i class="envy envy-paper-plane"></i>{{ center_package.offer3 }}</li>
+                                    <li><i class="envy envy-paper-plane"></i>{{ center_package.offer4 }}</li>
+                                    <li><i class="envy envy-paper-plane"></i>{{ center_package.offer5 }}</li>
+                                </ul>
+                                <a href="" class="btn btn-solid">choose plan <i class="envy envy-right-arrow"></i></a>
+                            </div>
+                        </div>
+                        <!-- pricing-item-single -->
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="pricing-item-single">
+                            <div class="pricing-item-content">
+                                <div class="content-text">
+                                    <span class="label">{{right_package.name }}</span>
+                                    <h2 class="price"><span>$</span>{{ right_package.price }}</h2>
+                                    <p>{{ right_package.timeframe }}</p>
+                                </div>
+                                <div class="content-bg"><img src="{% static 'assets/img/resource/icon_shape_7.png' %}" alt="" /></div>
+                            </div>
+                            <div class="pricing-item-list">
+                                <ul>
+                                    <li><i class="envy envy-paper-plane"></i>{{ right_package.offer1 }}</li>
+                                    <li><i class="envy envy-paper-plane"></i>{{ right_package.offer2 }}</li>
+                                    <li><i class="envy envy-paper-plane"></i>{{ right_package.offer3 }}</li>
+                                    <li><i class="envy envy-paper-plane"></i>{{ right_package.offer4 }}</li>
+                                    <li><i class="envy envy-paper-plane"></i>{{ right_package.offer5 }}</li>
+                                </ul>
+                                <a href="" class="btn btn-solid">choose plan <i class="envy envy-right-arrow"></i></a>
+                            </div>
+                        </div>
+                        <!-- pricing-item-single -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- pricing plan end -->
+
+        <!-- start newsletter section -->
+        <section class="newsletter-section ptb-100" style="background: url({{number_form_text.background_image.url}});background-repeat: no-repeat; background-size: cover  ;">
+            <div class="container">
+                <div class="section-title title-light">
+                    <span class="subtitle">get action</span>
+                    <h2>{{ number_form_text.title }}</h2>
+                    <p>{{ umber_form_text.text }}</p>
+                </div>
+                <form class="newsletter-form" action="{% url 'send_msg' %}" method="post">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <input class="form-control" placeholder="Phone number" type="text" name="text" required=""  />
+                        <div class="cta-btn">
+                            <button class="btn btn-solid" type="submit">
+                                Jo'natish
+                                <i class="envy envy-right-arrow"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="validator-newsletter" class="form-result"></div>
+                </form>
+            </div>
+        </section>
+        <!-- end newsletter section -->
+
+        
+
+        {% endblock content %}
+
+        
+        {% block scripts %}
+            <!-- jequery JS -->
+            <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+            <!-- bootstrap JS -->
+            <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+            <!-- popper JS -->
+            <script src="{% static 'assets/js/popper.min.js' %}"></script>
+            <!-- magnific popup JS -->
+            <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+            <!-- owl carousel JS -->
+            <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+            <!-- meanmenu JS -->
+            <script src="{% static 'assets/js/meanmenu.min.js' %}"></script>
+            <!-- form validator -->
+            <script src="{% static 'assets/js/form-validator.min.js' %}"></script>
+            <!-- contact form JS -->
+            <script src="{% static 'assets/js/contact-form-script.js' %}"></script>
+            <!-- ajaxchimp JS -->
+            <script src="{% static 'assets/js/jquery.ajaxchimp.min.js' %}"></script>
+            <!-- main JS -->
+            <script src="{% static 'assets/js/main.js' %}"></script>
+
+
+            <script>
+                document.querySelector('#index').classList.add('active')
+            </script>
+        {% endblock scripts %}
+    </body>
+</html>

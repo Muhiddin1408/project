@@ -1,0 +1,248 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block head %}
+    
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Author: HiBootstrap Theme, Category: IT, Multipurpose, HTML, SASS" />
+
+        <!-- title -->
+        <title>Solit - IT Startup HTML Template</title>
+
+        <!-- bootstrap CSS -->
+        <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" />
+        <!-- fontawesome CSS -->
+        <link rel="stylesheet" href="{% static 'assets/css/fontawesome.min.css' %}" />
+        <!-- envy icon CSS -->
+        <link rel="stylesheet" href="{% static 'assets/css/envyicon.min.css' %}" />
+        <!-- animate CSS -->
+        <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}" />
+        <!-- magnific popup CSS -->
+        <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.min.css' %}" />
+        <!-- owl-carousel CSS -->
+        <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}" />
+        <!-- meanmenu CSS -->
+        <link rel="stylesheet" href="{% static 'assets/css/meanmenu.min.css' %}" />
+        <!-- main style CSS -->
+        <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+        <!-- responsive CSS -->
+        <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}" />
+
+        <!-- favicon -->
+    </head>
+    {% endblock head %}
+
+
+
+    
+    {% block content %}
+        
+
+        <!-- start page title area-->
+        <div class="page-title-area bg-thin">
+            <div class="container">
+                <div class="page-title-content">
+                    <h1>about</h1>
+                    <ul>
+                        <li class="item"><a href="{% url 'index' %}">Home</a></li>
+                        <li class="item"><a href="{% url 'about' %}">about</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="shape">
+                <span class="shape1"></span>
+                <span class="shape2"></span>
+                <span class="shape3"></span>
+                <span class="shape4"></span>
+            </div>
+        </div>
+        <!-- end page title area -->
+
+        <!--start about section-->
+        <section id="about" class="about-section ptb-100 bg-thin">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-sm-12 pb-30">
+                        <div class="section-title">
+                            <span class="subtitle">about us</span>
+                            <h2>{{ about_us.title }}</h2>
+                        </div>
+                        <div class="about-text-blc">
+                            <p>{{ about_us.text }}</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="about-feature-blc">
+                                    <i class="envy envy-quality blue"></i>
+                                    <div class="about-feature-content">
+                                        <h6>{{ about_us.title1 }}</h6>
+                                        <p>{{ about_us.text1 }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="about-feature-blc">
+                                    <i class="envy envy-quality red"></i>
+                                    <div class="about-feature-content">
+                                        <h6>{{ about_us.title2 }}</h6>
+                                        <p>{{ about_us.text2 }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cta-btn">
+                            <a href="{% url 'about' %}" class="btn btn-solid">
+                                Read more
+                                <i class="envy envy-right-arrow"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12 pb-30">
+                        <div class="about-img">
+                            <div class="grid-img">
+                                <div class="grid-img-inner">
+                                    <img src="{{ about_us.image1.url }}" class="image-responsive" alt="office_image" />
+                                </div>
+                                <div class="grid-img-inner">
+                                    <img src="{{ about_us.image2.url }}" class="image-responsive" alt="office_image" />
+                                </div>
+                                <div class="grid-img-inner">
+                                    <img src="{{ about_us.image3.url }}" class="image-responsive" alt="office_image" />
+                                </div>
+                                <div class="grid-img-inner">
+                                    <img src="{{ about_us.image4.url }}" class="image-responsive" alt="office_image" />
+                                </div>
+                            </div>
+                            <div class="logo-overlay">
+                                <img src="{% static 'assets/img/logos/logo.png' %}" alt="logo_without_slogan" />
+                            </div>
+                            <div class="shape">
+                                <img src="{% static 'assets/img/resource/shape_2.png' %}" alt="shape" class="shape-inner" />
+                                <img src="{% static 'assets/img/resource/shape_4.png' %}" alt="shape" class="shape-inner" />
+                                <img src="{% static 'assets/img/resource/shape_2.png' %}" alt="shape" class="shape-inner" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--end about section-->
+
+        <!-- start team section-->
+        <section class="team-section ptb-100 bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <span class="subtitle">OUR Team</span>
+                    <h2>{{ team_text.title }}</h2>
+                    <p>{{ team_text.text }}</p>
+                </div>
+                <div class="team-slider owl-carousel">
+                    
+                    {% for i in team %}
+                        <div class="team-item">
+                            <div class="team-image">
+                                <img src="{{ i.image.url }}" alt="team-member" />
+                            </div>
+                            <div class="team-content">
+                                <h5>
+                                    <a href="#">{{ i.name }}</a>
+                                </h5>
+                                <p class="mb-2">{{ i.position }}</p>
+                                <div class="social-link">
+                                    <a href="{{i.facebook}}" class="bg-tertiary" target="_blank">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="{{ i.instagram }}" class="bg-success" target="_blank">
+                                        <i class="fab fa-instagram" aria-hidden="true"></i>
+
+                                    </a>
+                                    <a href="{{ i.telegram }}" class="bg-danger" target="_blank">
+                                        <i class="fab fa-telegram"></i> 
+                                    </a>
+                                </div>
+                            </div>
+                        </div>                                      
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <!-- end team section -->
+
+        <!-- Start Partner Area -->
+        <div class="partner-area ptb-50 bg-faded">
+            <div class="container">
+                <div class="partner-slider owl-carousel">
+                    
+                    {% for testimional in testimionals %}
+                    <div class="partner-item">
+                        <img src="{{ testimional.image.url }}" alt="image" />
+                        <img src="{{ testimional.image.url }}" alt="partner" />
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!-- end partner area -->
+        <!-- start newsletter section -->
+        <section class="newsletter-section ptb-100" style="background: url({{number_form_text.background_image.url}});background-repeat: no-repeat; background-size: cover  ;">
+            <div class="container">
+                <div class="section-title title-light">
+                    <span class="subtitle">get action</span>
+                    <h2>{{ form_text.title }}</h2>
+                    <p>{{ form_text.text }}</p>
+                </div>
+                <form class="newsletter-form" action="{% url 'send_msg' %}" method="post">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <input class="form-control" placeholder="Phone number" type="text" name="text" required=""  />
+                        <div class="cta-btn">
+                            <button class="btn btn-solid" type="submit">
+                                Jo'natish
+                                <i class="envy envy-right-arrow"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="validator-newsletter" class="form-result"></div>
+                </form>
+            </div>
+        </section>
+        <!-- end newsletter section -->
+
+
+        {% endblock content %}
+
+        
+        {% block scripts %}            
+            <!-- jequery JS -->
+            <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+            <!-- bootstrap JS -->
+            <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+            <!-- popper JS -->
+            <script src="{% static 'assets/js/popper.min.js' %}"></script>
+            <!-- magnific popup JS -->
+            <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+            <!-- owl carousel JS -->
+            <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+            <!-- meanmenu JS -->
+            <script src="{% static 'assets/js/meanmenu.min.js' %}"></script>
+            <!-- form validator -->
+            <script src="{% static 'assets/js/form-validator.min.js' %}"></script>
+            <!-- contact form JS -->
+            <script src="{% static 'assets/js/contact-form-script.js' %}"></script>
+            <!-- ajaxchimp JS -->
+            <script src="{% static 'assets/js/jquery.ajaxchimp.min.js' %}"></script>
+            <!-- main JS -->
+            <script src="{% static 'assets/js/main.js' %}"></script>
+
+
+            <script>
+                document.querySelector('#about').classList.add('active')
+            </script>
+
+        {% endblock scripts %}
+    </body>
+</html>

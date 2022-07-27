@@ -1,0 +1,178 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    
+    <link rel="icon" href="{{ site_logo.shortcut_ico.url }}" type="image/png" sizes="16x16" />
+{% block head %}
+
+{% endblock head %}
+    
+
+    <body>
+        <!-- start Preloader section-->
+        <div class="preloader-main">
+            <div class="loader">
+                <div class="loader-dot"></div>
+                <div class="loader-dot"></div>
+                <div class="loader-dot"></div>
+            </div>
+        </div>
+        <!--end preloader section -->
+
+        <!-- Start header Area -->
+        <header class="navbar-area nav-style-two">
+            <!-- menu for mobile device -->
+            <!-- <div class="mobile-nav">
+                <a href="#" class="logo">
+                    <img src="" alt="logo_light" />
+                    <img src="" alt="logo-dark" />
+                </a>
+            </div> -->
+
+            <!-- Menu for desktop device-->
+            <div class="main-nav">
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <div class="container">
+                        <a class="navbar-brand" href="{% url 'index' %}">
+                            <img src="{{ site_logo.image.url }}" alt="logo_light" />
+                            <img src="{{ site_logo.image.url }}" alt="logo-dark" />
+                        </a>
+                        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item">
+                                    <a href="{% url 'index' %}" class="nav-link" id="index">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'about' %}" class="nav-link" id="about">About</a>
+                                    
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'services' %}" class="nav-link" id="services">Services</a>
+                                </li>
+                                <!-- <li class="nav-item">
+                                    <a href="#" class="nav-link dropdown-toggle">Blog</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a href="" class="nav-link">Blog grid</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="" class="nav-link">blog details</a>
+                                        </li>
+                                    </ul>
+                                </li> -->
+                                <li class="nav-item">
+                                    <a href="{% url 'contact' %}" class="nav-link" id="contact">contact</a>
+                                </li>
+                            </ul>
+                            <!-- <div class="search-item">
+                                <div class="search-btn">
+                                    <i class="open-btn envy envy-magnify-glass"></i>
+                                    <i class="close-btn envy envy-close"></i>
+                                </div>
+                                <div class="search-overlay search-popup">
+                                    <form class="search-form">
+                                        <input class="search-input" name="search" placeholder="Search" type="text" />
+                                        <button class="btn btn-solid" type="submit">
+                                            <i class="envy envy-magnify-glass"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- end header area -->
+
+        
+        {% block content %}
+            
+        {% endblock content %}
+            
+
+        <!-- start footer area -->
+        <footer class="footer-area pt-100 pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-5 col-sm-6 col-12">
+                        <div class="footer-widget">
+                            <div class="navbar-brand">
+                                <a href="{% url 'index' %}">
+                                    <img src="{{ site_logo.image.url }}" alt="image" />
+                                </a>
+                            </div>
+                            <p>{{ footer_text.text }}</p>
+                            <div class="social-link">
+                                <a href="{{ footer_text.facebook }}" class="bg-tertiary" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                <a href="{{ footer_text.youtube }}" class="bg-danger" target="_blank"><i class="fab fa-youtube"></i></a>
+                                <a href="{{ footer_text.instagram }}" class="bg-pink" target="_blank"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-5 col-sm-6 col-12">
+                        <div class="footer-widget">
+                            <h5>Our Services</h5>
+                            <ul class="footer-quick-links">
+                                <li><a href="#">Interface Design</a></li>
+                                <li><a href="#">SEO Optimizer</a></li>
+                                <li><a href="#">Digital Marketing</a></li>
+                                <li><a href="#">Market Monitor</a></li>
+                                <li><a href="#">Graphic Design</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-5 col-sm-6 col-12">
+                        <div class="footer-widget">
+                            <h5>Other Resources</h5>
+                            <ul class="footer-quick-links">
+                                <li><a href="{% url 'about' %}">About Us</a></li>
+                                <li><a href="#">Pricing</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="{% url 'services' %}">Services</a></li>
+                                <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-5 col-sm-6 col-12">
+                        <div class="footer-widget">
+                            <h5>Contact info</h5>
+                            <div class="contact-info">
+                                <i class="envy envy-pin"></i>
+                                <p>{{ contact_info.address }}</p>
+                            </div>
+                            <div class="contact-info">
+                                <i class="envy envy-call"></i>
+                                <p>
+                                    <a href="tel:+001-548-159-2491">{{ contact_info.number }}</a>
+                                </p>
+                                <br>
+                                
+                                {% if contact_info.number2 %}
+                                    <p>
+                                        <a href="tel:{{ contact_info.number2 }}">{{ contact_info.number2 }}</a>
+                                    </p>
+                                {% endif %}
+                            </div>
+                            <div class="contact-info">
+                                <i class="envy envy-plane"></i>
+                                <p>
+                                    <a href="mailTo:hello@solit.com">{{ contact_info.email }}</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end footer area -->
+
+        <!-- start copy right area -->
+
+        
+        {% block scripts %}
+            
+        {% endblock scripts %}
+            
+    </body>
+</html>

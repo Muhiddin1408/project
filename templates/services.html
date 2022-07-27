@@ -1,0 +1,202 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+
+
+{% block head %}
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Author: HiBootstrap Theme, Category: IT, Multipurpose, HTML, SASS" />
+
+        <!-- title -->
+        <title>Solit - IT Startup HTML Template</title>
+
+        <!-- bootstrap CSS -->
+        <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" />
+        <!-- fontawesome CSS -->
+        <link rel="stylesheet" href="{% static 'assets/css/fontawesome.min.css' %}" />
+        <!-- envy icon CSS -->
+        <link rel="stylesheet" href="{% static 'assets/css/envyicon.min.css' %}" />
+        <!-- animate CSS -->
+        <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}" />
+        <!-- magnific popup CSS -->
+        <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.min.css' %}" />
+        <!-- owl-carousel CSS -->
+        <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}" />
+        <!-- meanmenu CSS -->
+        <link rel="stylesheet" href="{% static 'assets/css/meanmenu.min.css' %}" />
+        <!-- main style CSS -->
+        <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+        <!-- responsive CSS -->
+        <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}" />
+
+        <!-- favicon -->
+    </head>
+{% endblock head %}
+
+    
+    {% block content %}
+        
+        <!-- start page title area-->
+        <div class="page-title-area bg-thin">
+            <div class="container">
+                <div class="page-title-content">
+                    <h1>services</h1>
+                    <ul>
+                        <li class="item"><a href="{% url 'index' %}">Home</a></li>
+                        <li class="item"><a href="{% url 'services' %}">services</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="shape">
+                <span class="shape1"></span>
+                <span class="shape2"></span>
+                <span class="shape3"></span>
+                <span class="shape4"></span>
+            </div>
+        </div>
+        <!-- end page title area -->
+
+        <!--  start feature section -->
+        <section class="feature-section single pt-100 bg-thin">
+            <div class="container">
+                <div class="section-title">
+                    <h2>{{ services_text.title }}</h2>
+                    <p>{{ services_text.text }}</p>
+                </div>
+                
+                <div class="row pt-70">
+                    {% for service in services %}
+                    <div class="col-lg-4 col-md-6 col-sm-12 pb-70">
+                        <div class="item-single">
+                            <div class="icon">
+                                <i class="envy envy-magnify-glass2"></i>
+                                <div class="icon-bg">
+                                    <img src="{{ service.image.url }}" alt="icon_shape" />
+                                </div>
+                            </div>
+                            <div class="item-content">
+                                <h6><a href="" target="_self">{{ service.title }}</a></h6>
+                                <p>{{ service.text }}</p>
+                                <!-- <a href="" target="_self" class="btn btn-text-only">read more <i class="envy envy-right-arrow"></i></a> -->
+                            </div>
+                        </div>
+                        <!-- item-single -->
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <!-- end feature section -->
+
+        <!-- start works section -->
+        <section class="works-section ptb-100 bg-white">
+            <div class="container">
+                <div class="section-title">
+                    <h2>{{ explaining.title }}</h2>
+                    <p>{{ explaining.text }}</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="work-single">
+                            <div class="work-single-content">
+                                <i class="envy envy-cloud-computing1"></i>
+                                <h4>{{ explaining.service1 }}</h4>
+                                <div class="index"><span>1</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="work-single">
+                            <div class="work-single-content">
+                                <i class="envy envy-code2"></i>
+                                <h4>{{ explaining.service2 }}</h4>
+                                <div class="index"><span>2</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="work-single">
+                            <div class="work-single-content">
+                                <i class="envy envy-global2"></i>
+                                <h4>{{ explaining.service3 }}</h4>
+                                <div class="index"><span>3</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="work-single">
+                            <div class="work-single-content">
+                                <i class="envy envy-server"></i>
+                                <h4>{{ explaining.service4 }}</h4>
+                                <div class="index"><span>4</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end works section -->
+
+        <!--start tips section-->
+        <section class="tips-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12 ptb-100">
+                        <div class="section-title">
+                            <h2>{{ services_introduction.title }}</h2>
+                            <p>{{ services_introduction.text }}</p>
+                        </div>
+                        <div class="tips-list">
+                            <ul>
+                                <li>{{ services_introduction.cause1 }}</li>
+                                <li>{{ services_introduction.cause2 }}</li>
+                                <li>{{ services_introduction.cause3 }}</li>
+                                <li>{{ services_introduction.cause4 }}</li>
+                                <li>{{ services_introduction.cause5 }}</li>
+                            </ul>
+                        </div>
+                        <div class="cta-btn">
+                            <a href="#" class="btn btn-solid">start trial <i class="envy envy-right-arrow"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12 align-self-end">
+                        <div class="tips-img">
+                            <img src="{{ services_introduction.image.url }}" alt="tips" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--end tips section-->
+
+        
+        {% endblock content %}
+        
+
+{% block scripts %}    
+        <!-- jequery JS -->
+        <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+        <!-- bootstrap JS -->
+        <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+        <!-- popper JS -->
+        <script src="{% static 'assets/js/popper.min.js' %}"></script>
+        <!-- magnific popup JS -->
+        <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+        <!-- owl carousel JS -->
+        <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+        <!-- meanmenu JS -->
+        <script src="{% static 'assets/js/meanmenu.min.js' %}"></script>
+        <!-- form validator -->
+        <script src="{% static 'assets/js/form-validator.min.js' %}"></script>
+        <!-- contact form JS -->
+        <script src="{% static 'assets/js/contact-form-script.js' %}"></script>
+        <!-- ajaxchimp JS -->
+        <script src="{% static 'assets/js/jquery.ajaxchimp.min.js' %}"></script>
+        <!-- main JS -->
+        <script src="{% static 'assets/js/main.js' %}"></script>
+
+        <script>
+            document.querySelector('#services').classList.add('active')
+        </script>
+{% endblock scripts %}
